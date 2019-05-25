@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BindingContext="{Binding Main, Source={Static Resource Locator}}"
              x:Class="marenepar2.Views.NotasPage">
     <ContentPage.Content>
         <StackLayout
@@ -16,12 +17,15 @@
             <Entry
                 Grid.Row="0"
                 Grid.Column="1"
+                Text="{Binding Nota, Mode=TwoWay}"
                 Placeholder="Ingrese sus datos">
                 
             </Entry>
             <Button
                 BackgroundColor="Navy"
                 Text="Registre Notas"
+                Command="{Binding LoginCommand, Mode=TwoWay}"
+                IsEnabled="{Binding IsEnabled}"
                 TextColor="White">
             </Button>
                 
